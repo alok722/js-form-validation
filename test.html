@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body onload="document.form.email.focus();">
+
+    <div style="background-color: black; padding: 25px;">
+
+      <a href="#"><img src="https://www.tcs.com/content/dam/tcs/images/logo/tcs50-white1.png"/></a>
+
+      <p style="display:inline; text-align: center;color: white; font-weight: bold;font-size: 35px;margin-left: 15%;">JS,CSS, HTML - Mockup's </p>
+
+      <a href="#"><img src="https://cdn.logojoy.com/wp-content/uploads/2017/07/PwC_logo_PricewaterhouseCoopers-1024x788.png" style="float: right;"width="245px" height="65px" /></a>
+
+    </div>
+
+    <nav>
+      <ul class="nav nav-pills">
+      <li role="presentation" class="active" style="padding: 10px;"><a href="#">Form</a></li>
+      <li role="presentation" style="padding: 10px;"><a href="test2.html">Records</a></li>
+    </ul>
+    </nav>
+
+    <div class="container" style="margin-top: %1; margin-bottom: 5%;">
+
+        <form class="well form-horizontal" id="contact_form" name="form" onsubmit="return val()" method="GET">
+        <fieldset>
+
+        <!-- Form Title -->
+        <legend>Enter the Details!</legend>
+
+        <!-- Email-->
+        <div class="form-group">
+          <label class="col-md-4 control-label">E-Mail</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text" required id="email"   onblur="validateEmail()" autocomplete="off">
+                  <p id="emailP" style="display: inline;"></p>
+              </div>
+          </div>
+        </div>
+
+
+        <!-- Password-->     
+        <div class="form-group">
+          <label class="col-md-4 control-label">Password</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input name="password" id="pass" placeholder="Your Password" class="form-control" type="password" required onblur="validatePass()">
+                  <p id="passP" style="display: inline;"></p>
+              </div>
+            <input type="checkbox" onclick="password1()">Show Password?
+          </div>
+        </div>
+
+        <!-- Cost Center Number -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Cost Center Number</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                  <input name="cc" placeholder="Cost Center Number" class="form-control"  type="text" required id="cc" onblur="validateCc()" autocomplete="off">
+                  <p id="ccP" style="display: inline;"></p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Start Day -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Start Day</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
+                  <input name="startdate" class="form-control" type="date" required id="startdate" onblur="validateStartDate()">
+                  <p id="startdateP" style="display: inline;"></p>
+              </div>
+          </div>
+        </div>
+
+        <!-- End Day -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">End Day</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
+                  <input name="enddate" class="form-control"  type="date" required id="enddate" onblur="validateEndDate()">
+                  <p id="enddateP" style="display: inline;"></p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Start Time -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Start Time</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
+                  <input name="starttime" class="form-control"  type="time" required id="starttime">
+              </div>
+          </div>
+        </div>
+
+        <!-- End Time -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">End Time</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
+                  <input name="endtime" class="form-control"  type="time" required id="endtime" onblur="ValidateEndTime()">
+                  <p id="endtimeP" style="display: inline;"></p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Phone Number</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                  <input name="phone" placeholder="+1(123)456-7890" minlength="10" maxlength="10" pattern="[0-9]{1,10}" class="form-control" type="tel" id="phone" required autocomplete="off">
+              </div>
+          </div>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Date of Birth</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-pushpin"></i></span>
+                  <input name="dob" class="form-control"  type="date" required id="dob" onblur="validateAge()" autocomplete="off">
+                  <p id="dobP" style="display: inline;"></p>
+              </div>
+          </div>
+        </div>
+
+        <!-- No. of Members -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">No. of Members</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input name="member" placeholder="0 ~ 8" class="form-control" type="number" id="member" required onblur="validateMember()">
+                  <p id="memberP" style="display: inline;"></p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Employee Number -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Employee Number</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
+                  <input name="empno" placeholder="" class="form-control" type="number" id="empno" required maxlength="7" minlength="7" onblur="validateEmp()">
+                  <p id="empP" style="display: inline;"></p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Total Working Day -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Total Working Day</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-refresh"></i></span>
+                  <input name="workingday" placeholder="" class="form-control" type="number" id="workingday" onblur="calculateTotal()">
+              </div>
+          </div>
+        </div>
+
+        <!-- Calculated Bill Amount -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Calculated Bill Amount ($)</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-thumbs-up"></i></span>
+                  <input name="bill" placeholder="" class="form-control" type="number" id="bill" disabled="">
+                  <p id="billP" style="display: inline;"></p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-lg btn-primary" >Submit &nbsp<span class="glyphicon glyphicon-send"></span></button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+    <footer>© 2008-2016 PricewaterhouseCoopers LLP, a Delaware limited liability partnership. All rights reserved.</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="javascript.js"></script>
+  </body>
+</html>

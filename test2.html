@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body onload="myFunction()">
+
+    <div style="background-color: black; padding: 25px;">
+
+      <a href="#"><img src="https://www.tcs.com/content/dam/tcs/images/logo/tcs50-white1.png"/></a>
+
+      <p style="display:inline; text-align: center;color: white; font-weight: bold;font-size: 35px;margin-left: 15%;">JS,CSS, HTML - Mockup's </p>
+
+      <a href="#"><img src="https://cdn.logojoy.com/wp-content/uploads/2017/07/PwC_logo_PricewaterhouseCoopers-1024x788.png" style="float: right;"width="245px" height="65px" /></a>
+
+    </div>
+
+    <nav>
+      <ul class="nav nav-pills">
+      <li role="presentation" style="padding: 10px;"><a href="test.html">Form</a></li>
+      <li role="presentation" class="active" style="padding: 10px;"><a href="#">Records</a></li>
+    </ul>
+    </nav>
+
+    <div class="container">
+      <table class="table table-hover" style="margin-bottom: 20%;">
+      <tr>
+        <th>Form Input</th>
+        <th>Values</th>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td id="email"></td>
+      </tr>
+      <tr>
+        <th>Password:</th>
+        <td id="pass"></td>
+      </tr>
+      <tr>
+        <th>Cost Center Number:</th>
+        <td id="cc"></td>
+      </tr>
+      <tr>
+        <th>Start Date:</th>
+        <td id="startdate"></td>
+      </tr>
+      <tr>
+        <th>End Date:</th>
+        <td id="enddate"></td>
+      </tr>
+      <tr>
+        <th>Start Time:</th>
+        <td id="starttime"></td>
+      </tr>
+      <tr>
+        <th>End Time:</th>
+        <td id="endtime"></td>
+      </tr>
+      <tr>
+        <th>Phone Number:</th>
+        <td id="phone"></td>
+      </tr>
+      <tr>
+        <th>DOB:</th>
+        <td id="dob"></td>
+      </tr>
+      <tr>
+        <th>Number of member:</th>
+        <td id="member"></td>
+      </tr>
+      <tr>
+        <th>Employee Number:</th>
+        <td id="empno"></td>
+      </tr>
+      <tr>
+        <th>Working Day:</th>
+        <td id="workingday"></td>
+      </tr>
+      <tr>
+        <th>Total Bill:</th>
+        <td id="bill"></td>
+      </tr>
+    </table>
+    </div>
+
+    <footer>© 2008-2016 PricewaterhouseCoopers LLP, a Delaware limited liability partnership. All rights reserved.</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="javascript.js"></script> -->
+    <script type="text/javascript">
+      function myFunction(){
+
+      var email = localStorage.getItem('email');
+      var pass = localStorage.getItem('password');
+      var cc = localStorage.getItem('cc');
+      var startdate = localStorage.getItem('startdate');
+      var enddate = localStorage.getItem('enddate');
+      var starttime = localStorage.getItem('starttime',);
+      var endtime = localStorage.getItem('endtime');
+      var phone = localStorage.getItem('phone');
+      var dob = localStorage.getItem('dob');
+      var member = localStorage.getItem('member');
+      var empno = localStorage.getItem('empno');
+      var workingday = localStorage.getItem('workingday');
+      var bill = localStorage.getItem('bill');
+      
+      document.getElementById("email").innerHTML = email;
+      document.getElementById("pass").innerHTML = pass;
+      document.getElementById("cc").innerHTML = cc;
+      document.getElementById("startdate").innerHTML = startdate;
+      document.getElementById("enddate").innerHTML = enddate;
+      document.getElementById("starttime").innerHTML = starttime;
+      document.getElementById("endtime").innerHTML = endtime;
+      document.getElementById("phone").innerHTML = phone;
+      document.getElementById("dob").innerHTML = dob;
+      document.getElementById("member").innerHTML = member;
+      document.getElementById("empno").innerHTML = empno;
+      document.getElementById("workingday").innerHTML = workingday;
+      document.getElementById("bill").innerHTML = bill;
+
+      return true;
+    }
+    </script>
+  </body>
+</html>
